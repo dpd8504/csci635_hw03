@@ -78,7 +78,7 @@ def simulate_federated_training(file_path,
         acc = accuracy_score(y_test_np, y_pred_label)
         f1 = f1_score(y_test_np, y_pred_label)
 
-        print(f"Round {round_num} -> Centralized eval AUC: {auc:.4f}, Accuracy: {acc:.4f}, F1: {f1:.4f}")
+        print(f"Round {round_num+1} -> Centralized eval AUC: {auc:.4f}, Accuracy: {acc:.4f}, F1: {f1:.4f}")
 
         metrics_history.append({
             'round': round_num + 1,
