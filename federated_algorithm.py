@@ -44,7 +44,6 @@ def simulate_federated_training(file_path,
         clients_per_round = num_clients
 
     metrics_history = []
-    tff_auc = defaultdict(lambda: 0.0)
 
     for round_num in range(num_rounds):
         # Select random clients
@@ -87,9 +86,6 @@ def simulate_federated_training(file_path,
             'central_f1': f1
         })
 
-        tff_auc[100 * (clients_per_round / float(num_clients))] = max(
-            tff_auc[100 * (clients_per_round / float(num_clients))], auc
-        )
 
     return metrics_history, server_model, scaler
 
